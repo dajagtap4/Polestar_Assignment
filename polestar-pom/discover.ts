@@ -19,7 +19,7 @@ export class discover{
        this.carReadyforDelivery1 = page.locator(Polestar_Models.Interiör)
     }
 
-    async getOffers(){
+    async BookTestDrive(){
 
         await this.page.waitForSelector(Polestar_Models.booktestdrive)
         await this.booktestdrive1.click();
@@ -27,10 +27,5 @@ export class discover{
         await this.page.waitForSelector(Polestar_Models.Prenumerera)
         await this.Prenumerera1.click();
 
-        // await this.page.waitForSelector(Polestar_Models.offer)
-        // await this.offer1.check();
-
-        // await this.page.waitForSelector(Polestar_Models.carReadyforDelivery)
-        // await this.carReadyforDelivery1.click();
     }
 }

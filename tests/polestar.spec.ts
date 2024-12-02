@@ -27,7 +27,7 @@ test.describe('Polestar Test Cases', () => {
       const data = new yourData(page)
 
       await home.discoverOffers()
-      await dis.getOffers()
+      await dis.BookTestDrive()
       await data.FillYourDataForm()
       await data.submitForm()
    })

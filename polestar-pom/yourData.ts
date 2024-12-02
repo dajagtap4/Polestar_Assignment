@@ -30,8 +30,11 @@ export class yourData{
 
         await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.firstname)
+        await this.firstname.waitFor({ state: 'visible' }); // Wait for visibility
         await this.firstname.fill(Polestar.firstname);
+
+        //await this.page.waitForSelector(Polestar_Models.firstname)
+        //await this.firstname.fill(Polestar.firstname);
 
         await this.page.waitForTimeout(2000)
 
