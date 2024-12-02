@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { homePage } from '../polestar-pom/homePage';
 import {polestar2} from '../polestar-pom/polestar2';
 import { Polestar } from './configData';
-import { discover } from '../polestar-pom/Discover';
+import { discovery } from '../polestar-pom/discovery.ts';
 import { yourData } from '../polestar-pom/yourData';
 
 test.describe('Polestar Test Cases', () => {
@@ -23,7 +23,7 @@ test.describe('Polestar Test Cases', () => {
 
     test('TC002 - Verify user can Book a test drive', async({page})=>{
       const home = new homePage(page)
-      const dis = new discover(page)
+      const dis = new discovery(page)
       const data = new yourData(page)
 
       await home.discoverOffers()
