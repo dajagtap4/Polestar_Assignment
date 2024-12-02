@@ -18,7 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test -g "TC002 - Verify user can Book a test drive" --project=chromium --headed
+      run: npx playwright test -g "TC002 - Verify user can Book a test drive" --project=chromium
     - uses: actions/upload-artifact@v4
       if: always()
       with:
