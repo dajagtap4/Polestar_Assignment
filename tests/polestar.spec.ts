@@ -3,6 +3,7 @@ import { homePage } from '../polestar-pom/homePage';
 import { polestar2 } from '../polestar-pom/polestar2';
 import { discovery } from '../polestar-pom/discovery';
 import { yourData } from '../polestar-pom/yourData';
+import {instagram } from '../polestar-pom/instagram'
 
 const jsonData = JSON.parse(JSON.stringify(require("../tests/configData.json")))
 
@@ -31,5 +32,13 @@ test.describe('Polestar Test Cases', () => {
       await dis.BookTestDrive()
       await data.FillYourDataForm()
       await data.submitForm()
+   })
+
+   test('TC003 - navigate to instagram page and verify title', async({page})=>{
+      const home = new homePage(page)
+      const ig = new instagram(page)
+
+      await home.navigateToInstagram()
+      await ig.getTitle(page)
    })
 });

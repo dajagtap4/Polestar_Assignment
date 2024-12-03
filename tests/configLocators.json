@@ -22,5 +22,7 @@
     "pincode":"[name='zipCode']",
     "dropDownCarsYouAreInterestedIn":"//*[@id='main-content']/section/div/div/div[3]/form/div[1]/div[5]/div/div/div[1]/div/div[1]",
     "checkbox":".css-1q367wt",
-    "sent":"//*[@id='main-content']/section/div/div/div[3]/form/button"
+    "sent":"//*[@id='main-content']/section/div/div/div[3]/form/button",
+
+    "instagramLocator":"//a[text()='Instagram']"
 }
