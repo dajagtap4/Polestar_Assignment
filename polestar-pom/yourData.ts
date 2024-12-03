@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test"
-import { Polestar_Models } from "../tests/configLocators"
-import { Polestar } from "../tests/configData"
+const configLocators = JSON.parse(JSON.stringify(require("../tests/configLocators.json")))
+const jsonData = JSON.parse(JSON.stringify(require("../tests/configData.json")))
 
 export class yourData{
 
@@ -16,14 +16,14 @@ export class yourData{
 
     constructor(page: Page){
        this.page = page
-       this.firstname = page.locator(Polestar_Models.firstname)
-       this.lastname = page.locator(Polestar_Models.lastname)
-       this.email = page.locator(Polestar_Models.email)
-       this.pincode = page.locator(Polestar_Models.pincode)
+       this.firstname = page.locator(configLocators.firstname)
+       this.lastname = page.locator(configLocators.lastname)
+       this.email = page.locator(configLocators.email)
+       this.pincode = page.locator(configLocators.pincode)
        this.dropDownCarsYouAreInterestedIn = page.getByTestId('models').locator('label').nth(1)
        this.selectOption = page.getByRole('option', { name: 'Polestar 2' })
-       this.checkbox = page.locator(Polestar_Models.checkbox)
-       this.sent = page.locator(Polestar_Models.sent)
+       this.checkbox = page.locator(configLocators.checkbox)
+       this.sent = page.locator(configLocators.sent)
     }   
 
     async FillYourDataForm(){
@@ -33,47 +33,47 @@ export class yourData{
         // await this.firstname.waitFor({ state: 'visible' }); // Wait for visibility
         // await this.firstname.fill(Polestar.firstname);
 
-        await this.page.waitForSelector(Polestar_Models.firstname)
-        await this.firstname.fill(Polestar.firstname);
+        await this.page.waitForSelector(configLocators.firstname)
+        await this.firstname.fill(jsonData.firstname);
 
         //await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.lastname)
-        await this.lastname.fill(Polestar.lastname);
+        await this.page.waitForSelector(configLocators.lastname)
+        await this.lastname.fill(jsonData.lastname);
 
         //await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.email)
-        await this.email.fill(Polestar.email);
+        await this.page.waitForSelector(configLocators.email)
+        await this.email.fill(jsonData.email);
 
         //await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.pincode)
-        await this.pincode.fill(Polestar.pincode);
+        await this.page.waitForSelector(configLocators.pincode)
+        await this.pincode.fill(jsonData.pincode);
 
         //await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.dropDownCarsYouAreInterestedIn)
+        await this.page.waitForSelector(configLocators.dropDownCarsYouAreInterestedIn)
         await this.dropDownCarsYouAreInterestedIn.click();  
 
         //await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.dropDownCarsYouAreInterestedIn)
+        await this.page.waitForSelector(configLocators.dropDownCarsYouAreInterestedIn)
         await this.selectOption.click()
 
         //await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.dropDownCarsYouAreInterestedIn)
+        await this.page.waitForSelector(configLocators.dropDownCarsYouAreInterestedIn)
         await this.page.locator('.css-5y62p8').click();
 
         //await this.page.waitForTimeout(2000)
 
-        await this.page.waitForSelector(Polestar_Models.checkbox)
+        await this.page.waitForSelector(configLocators.checkbox)
         await this.checkbox.check();      
     }
 
     async submitForm(){
-        await this.page.waitForSelector(Polestar_Models.sent)
+        await this.page.waitForSelector(configLocators.sent)
         await this.sent.click();
     }
 }

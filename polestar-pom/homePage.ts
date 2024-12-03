@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test"
-import { Polestar_Models } from "../tests/configLocators"
+const configLocators = JSON.parse(JSON.stringify(require("../tests/configLocators.json")))
 
 export class homePage{
 
@@ -10,7 +10,7 @@ export class homePage{
     constructor(page: Page){
        this.page = page
        this.polestar2 = page.getByRole('button', { name: 'Polestar 2' })
-       this.discover1 = page.locator(Polestar_Models.discover)
+       this.discover1 = page.locator(configLocators.discover)
     }   
 
     async selectpolestar(){

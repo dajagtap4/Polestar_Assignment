@@ -1,14 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { homePage } from '../polestar-pom/homePage';
 import { polestar2 } from '../polestar-pom/polestar2';
-import { Polestar } from './configData';
 import { discovery } from '../polestar-pom/discovery';
 import { yourData } from '../polestar-pom/yourData';
+
+const jsonData = JSON.parse(JSON.stringify(require("../tests/configData.json")))
 
 test.describe('Polestar Test Cases', () => {
 
     test.beforeEach(async ({ page }) => {
-        await page.goto(Polestar.loginURL);
+        await page.goto(jsonData.loginURL);
         await page.getByRole('button', { name: 'Accept all' }).click();
     });
 

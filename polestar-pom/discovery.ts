@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test"
-import { Polestar_Models } from "../tests/configLocators"
+const configLocators = JSON.parse(JSON.stringify(require("../tests/configLocators.json")))
 
 export class discovery{
 
@@ -13,18 +13,18 @@ export class discovery{
     constructor(page: Page){
        this.page = page
        
-       this.booktestdrive1 = page.locator(Polestar_Models.booktestdrive)
-       this.Prenumerera1 = page.locator(Polestar_Models.Prenumerera)
-       this.offer1 = page.locator(Polestar_Models.offer)
-       this.carReadyforDelivery1 = page.locator(Polestar_Models.Interiör)
+       this.booktestdrive1 = page.locator(configLocators.booktestdrive)
+       this.Prenumerera1 = page.locator(configLocators.Prenumerera)
+       this.offer1 = page.locator(configLocators.offer)
+       this.carReadyforDelivery1 = page.locator(configLocators.Interiör)
     }
 
     async BookTestDrive(){
 
-        await this.page.waitForSelector(Polestar_Models.booktestdrive)
+        await this.page.waitForSelector(configLocators.booktestdrive)
         await this.booktestdrive1.click();
 
-        await this.page.waitForSelector(Polestar_Models.Prenumerera)
+        await this.page.waitForSelector(configLocators.Prenumerera)
         await this.Prenumerera1.click();
 
     }

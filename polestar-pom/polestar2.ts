@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test"
 
-import { Polestar_Models } from "../tests/configLocators"
+const configLocators = JSON.parse(JSON.stringify(require("../tests/configLocators.json")))
 
 export class polestar2{
 
@@ -15,27 +15,27 @@ export class polestar2{
 
     constructor(page: Page){
        this.page = page
-       this.Designa_och_beställ1 = page.locator(Polestar_Models.Designa_och_beställ).first()
-       this.Long_range_Dual1 = page.locator(Polestar_Models.Long_range_Dual)
-       this.Exteriör1 = page.locator(Polestar_Models.Exteriör)
+       this.Designa_och_beställ1 = page.locator(configLocators.Designa_och_beställ).first()
+       this.Long_range_Dual1 = page.locator(configLocators.Long_range_Dual)
+       this.Exteriör1 = page.locator(configLocators.Exteriör)
        //this.Uppgraderingar1 = page.locator(Polestar_Models.Uppgraderingar)
-       this.Interiör1 = page.locator(Polestar_Models.Interiör)
-       this.Fälgar1 = page.locator(Polestar_Models.Fälgar)
+       this.Interiör1 = page.locator(configLocators.Interiör)
+       this.Fälgar1 = page.locator(configLocators.Fälgar)
        this.submitButton = page.getByRole('button', { name: 'Fortsätt' })
     }
 
     async modifyPolestar2(){
 
         //Designa_och_beställ
-        await this.page.waitForSelector(Polestar_Models.Designa_och_beställ)
+        await this.page.waitForSelector(configLocators.Designa_och_beställ)
         await this.Designa_och_beställ1.click();
 
         //Long_range_Dual
-        await this.page.waitForSelector(Polestar_Models.Long_range_Dual)
+        await this.page.waitForSelector(configLocators.Long_range_Dual)
         await this.Long_range_Dual1.click();
 
         //Exteriör
-        await this.page.waitForSelector(Polestar_Models.Exteriör)
+        await this.page.waitForSelector(configLocators.Exteriör)
         await this.Exteriör1.click();
 
         //Uppgraderingar
@@ -44,11 +44,11 @@ export class polestar2{
         // await this.Uppgraderingar1.check();
 
         //Interiör
-        await this.page.waitForSelector(Polestar_Models.Interiör)
+        await this.page.waitForSelector(configLocators.Interiör)
         await this.Interiör1.click();
 
         //Fälgar
-        await this.page.waitForSelector(Polestar_Models.Fälgar)
+        await this.page.waitForSelector(configLocators.Fälgar)
         await this.Fälgar1.click();
     }
 
