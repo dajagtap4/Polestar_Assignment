@@ -2,6 +2,8 @@ import {expect, test} from '@playwright/test'
 
 var userid;
 
+test.describe('REST API Tests with ReqRes', () => {
+
 test('apiGet',async ({request}) => {
     const response = await request.get('https://reqres.in/api/users?page=2')
     console.log(await response.json())
@@ -35,7 +37,9 @@ test('apiPut',async ({request}) => {
 
 })
 
-test('apiDelete',async ({request}) => {
-   await request.delete('https://reqres.in/api/users/'+userid)
+    test('apiDelete',async ({request}) => {
+     await request.delete('https://reqres.in/api/users/'+userid)
 
-})
+    })
+
+});
