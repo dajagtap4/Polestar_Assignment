@@ -36,37 +36,37 @@ export class yourData{
         //await this.page.waitForSelector(Polestar_Models.firstname)
         //await this.firstname.fill(Polestar.firstname);
 
-        await this.page.waitForTimeout(2000)
+        //await this.page.waitForTimeout(2000)
 
         await this.page.waitForSelector(Polestar_Models.lastname)
         await this.lastname.fill(Polestar.lastname);
 
-        await this.page.waitForTimeout(2000)
+        //await this.page.waitForTimeout(2000)
 
         await this.page.waitForSelector(Polestar_Models.email)
         await this.email.fill(Polestar.email);
 
-        await this.page.waitForTimeout(2000)
+        //await this.page.waitForTimeout(2000)
 
         await this.page.waitForSelector(Polestar_Models.pincode)
         await this.pincode.fill(Polestar.pincode);
 
-        await this.page.waitForTimeout(2000)
+        //await this.page.waitForTimeout(2000)
 
         await this.page.waitForSelector(Polestar_Models.dropDownCarsYouAreInterestedIn)
         await this.dropDownCarsYouAreInterestedIn.click();  
 
-        await this.page.waitForTimeout(2000)
+        //await this.page.waitForTimeout(2000)
 
         await this.page.waitForSelector(Polestar_Models.dropDownCarsYouAreInterestedIn)
         await this.selectOption.click()
 
-        await this.page.waitForTimeout(2000)
+        //await this.page.waitForTimeout(2000)
 
         await this.page.waitForSelector(Polestar_Models.dropDownCarsYouAreInterestedIn)
         await this.page.locator('.css-5y62p8').click();
 
-        await this.page.waitForTimeout(2000)
+        //await this.page.waitForTimeout(2000)
 
         await this.page.waitForSelector(Polestar_Models.checkbox)
         await this.checkbox.check();      
