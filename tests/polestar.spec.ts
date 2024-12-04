@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+
 import { homePage } from '../polestar-pom/homePage';
 import { polestar2 } from '../polestar-pom/polestar2';
 import { discovery } from '../polestar-pom/discovery';
