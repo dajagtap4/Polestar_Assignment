@@ -42,4 +42,11 @@ test.describe('Polestar Test Cases', () => {
       await home.navigateToInstagram()
       await ig.getTitle(page)
    })
+
+   test('TC004 - verify title of homepage', async({page})=>{
+      const home = new homePage(page)
+
+      await home.verifyHomepageTitle(page)
+      await home.printTitle(page)
+   })
 });

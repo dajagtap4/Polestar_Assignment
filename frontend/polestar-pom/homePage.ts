@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test"
+import { Locator, Page, expect} from "@playwright/test"
 const configLocators = JSON.parse(JSON.stringify(require('../utils/configLocators.json')))
 
 export class homePage{
@@ -25,5 +25,14 @@ export class homePage{
 
     async navigateToInstagram(){
         await this.instagram.click()
+    }
+
+    async verifyHomepageTitle(page){
+      const title = await page.title();
+      expect(title).toBe('Polestar – Elbilar | Polestar Sverige');
+    }
+
+    async printTitle(page){
+        await console.log(await page.title())
     }
 }

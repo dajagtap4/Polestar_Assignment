@@ -53,6 +53,7 @@ export class polestar2{
     }
 
     async submit(){
+        await this.page.waitForTimeout(2000)
         await this.submitButton.click();
     }
 }
