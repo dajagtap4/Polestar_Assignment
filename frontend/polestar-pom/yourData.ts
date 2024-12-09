@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test"
-const configLocators = JSON.parse(JSON.stringify(require("../tests/configLocators.json")))
-const jsonData = JSON.parse(JSON.stringify(require("../tests/configData.json")))
+const configLocators = JSON.parse(JSON.stringify(require("../utils/configLocators.json")))
+const jsonData = JSON.parse(JSON.stringify(require('../utils/configData.json')))
 
 export class yourData{
 

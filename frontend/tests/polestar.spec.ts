@@ -6,7 +6,7 @@ import { discovery } from '../polestar-pom/discovery';
 import { yourData } from '../polestar-pom/yourData';
 import {instagram } from '../polestar-pom/instagram'
 
-const jsonData = JSON.parse(JSON.stringify(require("../tests/configData.json")))
+const jsonData = JSON.parse(JSON.stringify(require("../utils/configData.json")))
 
 test.describe('Polestar Test Cases', () => {
 
