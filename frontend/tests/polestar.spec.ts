@@ -24,7 +24,7 @@ test.describe('Polestar Test Cases', () => {
        await modify.submit()
     })
 
-    test('TC002 - Verify user can Book a test drive', async({page})=>{
+    test('TC:002 - Verify user can Book a test drive', async({page})=>{
       const home = new homePage(page)
       const dis = new discovery(page)
       const data = new yourData(page)
@@ -35,7 +35,7 @@ test.describe('Polestar Test Cases', () => {
       await data.submitForm()
    })
 
-   test('TC003 - navigate to instagram page and verify title', async({page})=>{
+   test('TC:003 - navigate to instagram page and verify title', async({page})=>{
       const home = new homePage(page)
       const ig = new instagram(page)
 
@@ -43,7 +43,7 @@ test.describe('Polestar Test Cases', () => {
       await ig.getTitle(page)
    })
 
-   test('TC004 - verify title of homepage', async({page})=>{
+   test('TC:004 - verify title of homepage', async({page})=>{
       const home = new homePage(page)
 
       await home.verifyHomepageTitle(page)
