@@ -5,6 +5,7 @@
     "lastname": "Armstrong",
     "email": "abc@gmail.com",
     "pincode": "123 45",
-    "carsOption": "Polestar 2"
-
+    "carsOption": "Polestar 2",
+    
+    "acceptAll":"Accept all"
 }

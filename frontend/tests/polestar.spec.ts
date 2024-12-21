@@ -11,8 +11,10 @@ const jsonData = JSON.parse(JSON.stringify(require("../utils/configData.json")))
 test.describe('Polestar Test Cases', () => {
 
     test.beforeEach(async ({ page }) => {
+        const home = new homePage(page)
         await page.goto(jsonData.loginURL);
-        await page.getByRole('button', { name: 'Accept all' }).click();
+
+        await home.acceptAll()
     });
 
     test('TC:001 - Verify user can modify design and order for Polish2/polestar2', async({page})=>{

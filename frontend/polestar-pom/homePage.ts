@@ -1,5 +1,6 @@
 import { Locator, Page, expect} from "@playwright/test"
 const configLocators = JSON.parse(JSON.stringify(require('../utils/configLocators.json')))
+const jsonData = JSON.parse(JSON.stringify(require("../utils/configData.json")))
 
 export class homePage{
 
@@ -34,5 +35,10 @@ export class homePage{
 
     async printTitle(page){
         await console.log(await page.title())
+    }
+
+    async acceptAll(){
+        await this.page.waitForTimeout(1000)
+        await this.page.getByRole('button', { name: 'Accept all' }).click();
     }
 }
