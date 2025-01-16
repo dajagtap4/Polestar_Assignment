@@ -58,10 +58,23 @@ Supports complex scenarios (e.g., user authentication, data-driven testing).
 
 Official website: [K6 Website](https://k6.io/)
 
-Open cmd : ` choco install k6 `
+Install K6 Using Chocolatey, open cmd and hit below coomand 
 
-Verify Installation: k6 version
+```
+ choco install k6 
+```
+if they are asking to install chocolatey, Run the following command to install Chocolatey
 
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+```
+
+Verify Installation: 
+
+```
+k6 version
+```
 create seperate folder name k6, in k6 create file k6get.js
 
 ` k6get.js `
